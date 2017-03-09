@@ -1,0 +1,17 @@
+version: '2'
+services:
+  openaffect:
+    image: openaffect/java-server
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mongodb
+  mongodb:
+    build: ../../docker-images/oa-mongodb
+    ports:
+      - "27017:27017"
+    restart: always
+    volumes:
+      - data_mongo:/data/db
+volumes:
+  data_mongo:

@@ -1,0 +1,75 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Open Affect API",
+		"_postman_id": "af2c050f-bb8b-fad3-7ff9-a08dc9e9ba07",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Send sample measure (reaction on GitHub issue)",
+			"request": {
+				"url": "http://{{docker_host}}:8080/api/measures/",
+				"method": "POST",
+				"header": [
+					{
+						"key": "//Authorization",
+						"value": "Basic dXNlcjowNjQ2ZDM4Mi02YjE5LTQ1ZDAtYWQ3MS1jMzVkY2ZmNWFlZGY=",
+						"description": "",
+						"disabled": true
+					},
+					{
+						"key": "//Accept",
+						"value": "application/json",
+						"description": "",
+						"disabled": true
+					},
+					{
+						"key": "Content-type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"timestamp\" : \"2017-03-09T11:18:23Z\",\n\t\"emotion\" : {\n\t\t\"category\": \"agreement\",\n\t\t\"intensity\": 1.0\n\t},\n\t\"trigger\" : {\n\t\t\"href\" : \"https://github.com/openaffect/openaffect-server/issues/1\",\n\t\t\"type\" : \"GitHub issue\",\n\t\t\"properties\" : {\n\t\t\t\"createdAt\" : \"2017-03-09T11:16:13Z\",\n\t\t\t\"author\" : {\n\t\t\t\t\"login\" : \"wasadigi\"\n\t\t\t}\n\t\t}\n\t},\n\t\"subject\" : {\n\t\t\"href\": \"https://github.com/wasadigi\",\n\t\t\"type\": \"person\",\n\t\t\"properties\" : {\n        \t\"login\": \"wasadigi\",\n            \"name\": \"Olivier Liechti\"\n\t\t}\n\n\t},\n\t\"sensor\" : {\n\t\t\"href\": \"https://www.getpostman.com/\",\n\t\t\"type\": \"manual entry agent\"\n\t}\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get list of measures",
+			"request": {
+				"url": "http://{{docker_host}}:8080/api/measures/",
+				"method": "GET",
+				"header": [
+					{
+						"key": "//Authorization",
+						"value": "Basic dXNlcjowNjQ2ZDM4Mi02YjE5LTQ1ZDAtYWQ3MS1jMzVkY2ZmNWFlZGY=",
+						"description": "",
+						"disabled": true
+					},
+					{
+						"key": "//Accept",
+						"value": "application/json",
+						"description": "",
+						"disabled": true
+					},
+					{
+						"key": "Content-type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"timestampXX\" : 1,\n\t\"emotion\" : {\n\t\t\"category\": \"joy\"\n\t}\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
