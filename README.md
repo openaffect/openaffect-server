@@ -4,6 +4,10 @@ This repository contains a server-side implementation of the Open Affect API, bu
 
 ## What is Open Affect API?
 
+Software development is a human activity and the affective state of stakeholders (developers, testers, users, etc.) plays an important role. More and more, tools allow to capture and record emotions associated to software artefacts and aspects. Open Affect is a proposal to standardize this process.
+
+With Open Affect API, servers store **measures** reported by different types of **sensors**. A **measure** captures the fact that a **trigger** has caused a **subject** to feel a certain **emotion** (e.g. *a bug report has caused John to feel angry*).
+
 ## Where do I find the API specification?
 
 The Open Affect API has been specified with the Swagger format. The YAML file that describes the types and endpoints for the API is located in `./microservices/oa-server/src/main/resources/api-spec.yaml`.
@@ -28,6 +32,10 @@ docker run -p 28080:8080 swaggerapi/swagger-editor
 
 
 ## How do I send API requests to the server?
+
+In the current version, there is a single end-point: `/measures`, which supports `POST` and `GET` methods. The first method is used to create a measure, the second one is used to retrieve the list of all measures stored on the server.
+
+An example is provided in the form of a PostMan collection, available in `examples/OpenAffectAPI.postman_collection`. The example shows how to report a measure, which captures the fact that a person has expressed an emotion about a particular issue on GitHub.
 
 ## Licences
 
