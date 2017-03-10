@@ -15,10 +15,6 @@ host: 192.168.99.100
 basePath: /api
 schemes:
   - http
-consumes:
-  - application/json
-produces:
-  - application/json
 paths:
   /measures:
     post:
@@ -41,6 +37,7 @@ paths:
     get:
       description: list reported measures
       operationId: listMeasures
+      consumes:
       produces:
         - application/json
       responses:

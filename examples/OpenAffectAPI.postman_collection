@@ -2,7 +2,7 @@
 	"variables": [],
 	"info": {
 		"name": "Open Affect API",
-		"_postman_id": "af2c050f-bb8b-fad3-7ff9-a08dc9e9ba07",
+		"_postman_id": "9c4f0e00-66f5-64a9-4fa1-dedb9ad1cb9a",
 		"description": "",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
 	},
@@ -16,12 +16,6 @@
 					{
 						"key": "//Authorization",
 						"value": "Basic dXNlcjowNjQ2ZDM4Mi02YjE5LTQ1ZDAtYWQ3MS1jMzVkY2ZmNWFlZGY=",
-						"description": "",
-						"disabled": true
-					},
-					{
-						"key": "//Accept",
-						"value": "application/json",
 						"description": "",
 						"disabled": true
 					},
@@ -52,13 +46,7 @@
 						"disabled": true
 					},
 					{
-						"key": "//Accept",
-						"value": "application/json",
-						"description": "",
-						"disabled": true
-					},
-					{
-						"key": "Content-type",
+						"key": "Accept",
 						"value": "application/json",
 						"description": ""
 					}
