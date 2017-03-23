@@ -10,4 +10,6 @@ language: java
 script: 
   - docker --version
   - docker-compose --version
+  - cd docker-topologies/runtime
+  - docker-compose up
 
