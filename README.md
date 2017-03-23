@@ -37,6 +37,20 @@ In the current version, there is a single end-point: `/measures`, which supports
 
 An example is provided in the form of a PostMan collection, available in `examples/OpenAffectAPI.postman_collection`. The example shows how to report a measure, which captures the fact that a person has expressed an emotion about a particular issue on GitHub.
 
+
+## Is there an executable specification for the server?
+
+Yes, since release 0.1.1. We use [Cucumber-JVM](https://cucumber.io/docs/reference/jvm) to specify the expected behaviour of the REST API implementation. We have a separate maven project for that, in the `./microservices/oa-server-specs` directory. The build process of that project also uses the Swagger API specification to generate client stubs. The features are described in Gherkin feature files in the `./microservices/oa-server-specs/src/test/resources/scenarios` directory.
+
+## How do I run the executable specification?
+
+1. Start the docker topology, as explained before.
+2. Build the docker image that encapsulates the executable specification
+  * `cd docker-images/oa-server-specs`
+  * `./build-docker-image.sh`
+3. Run this image and check the output on the console
+  * `./run-docker-image.sh`
+
 ## Licences
 
 The icon for the GitHub organization is 'masks' by Creative Stall from the Noun Project
