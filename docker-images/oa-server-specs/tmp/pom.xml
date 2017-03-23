@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>ch.heigvd.amt.gamification</groupId>
-  <artifactId>ExecutableSpecification</artifactId>
+  <groupId>io.openaffect</groupId>
+  <artifactId>executableSpecification</artifactId>
   <version>1.0-SNAPSHOT</version>
   <packaging>jar</packaging>
   <properties>
@@ -42,11 +42,9 @@
               -->
               <library>okhttp-gson</library>
               <configOptions>
-                <!--<sourceFolder>src/gen/java/main</sourceFolder>-->
                 <sourceFolder>.</sourceFolder>
-                <!--<basePackage>ch.heigvd.gamification</basePackage>-->
-                <modelPackage>ch.heigvd.gamification.api.dto</modelPackage>
-                <apiPackage>ch.heigvd.gamification.api</apiPackage>
+                <modelPackage>io.openaffect.api.dto</modelPackage>
+                <apiPackage>io.openaffect.api</apiPackage>
               </configOptions>
               <output>target/generated-sources/swagger</output>
             </configuration>

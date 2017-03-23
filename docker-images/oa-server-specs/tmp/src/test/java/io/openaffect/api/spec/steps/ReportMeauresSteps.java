@@ -1,14 +1,14 @@
-package ch.heigvd.amt.gamification.spec.steps;
+package io.openaffect.api.spec.steps;
 
-import ch.heigvd.gamification.ApiException;
-import ch.heigvd.gamification.ApiResponse;
-import ch.heigvd.gamification.api.DefaultApi;
-import ch.heigvd.gamification.api.dto.Emotion;
-import ch.heigvd.gamification.api.dto.Measure;
-import ch.heigvd.gamification.api.dto.Resource;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import io.openaffect.ApiException;
+import io.openaffect.ApiResponse;
+import io.openaffect.api.DefaultApi;
+import io.openaffect.api.dto.Emotion;
+import io.openaffect.api.dto.Measure;
+import io.openaffect.api.dto.Resource;
 import org.joda.time.DateTime;
 
 import java.util.List;

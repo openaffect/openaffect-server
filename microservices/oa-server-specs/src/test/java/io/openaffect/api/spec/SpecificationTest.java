@@ -1,4 +1,4 @@
-package ch.heigvd.amt.gamification.spec;
+package io.openaffect.api.spec;
 
 import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
