@@ -2,6 +2,8 @@
 
 This repository contains a server-side implementation of the Open Affect API, built on top of the Spring Boot framework.
 
+[![Build Status](https://travis-ci.org/openaffect/openaffect-server.svg?branch=master)](https://travis-ci.org/openaffect/openaffect-server)
+
 ## What is Open Affect API?
 
 Software development is a human activity and the affective state of stakeholders (developers, testers, users, etc.) plays an important role. More and more, tools allow to capture and record emotions associated to software artefacts and aspects. Open Affect is a proposal to standardize this process.
