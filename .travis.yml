@@ -25,5 +25,5 @@ script:
   - cd ../../docker-images/oa-server-specs/
   - ./run-docker-image.sh
   - cd ../../docker-topologies/runtime
-  - ./docker-compose down
+  - docker-compose down
 
