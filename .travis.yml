@@ -15,5 +15,10 @@ script:
   - cd ../oa-server-specs/
   - ./build-docker-image.sh
   - cd ../../docker-topologies/runtime
-  - docker-compose up
+  - docker-compose start
+  - wait 30
+  - cd ../../docker-images/oa-server-specs/
+  - ./docker-images/oa-server-specs/run-docker-image.sh
+  - cd ../../docker-topologies/runtime
+  - ./docker-compose down
 
