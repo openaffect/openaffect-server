@@ -1,12 +1,6 @@
 pipeline {
     agent any
     stages {
-       stage('Checkout') {
-            steps {
-                git url: 'https://github.com/openaffect/openaffect-server.git'
-            }
-           
-       }
        stage('Build') {
            steps {
                 dir (path: "./docker-images/oa-java-server/") {
