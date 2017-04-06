@@ -1,2 +1,2 @@
 #!/bin/bash
-docker run -it -v ~/.m2:/root/.m2 --net runtime_default openaffect/server-specs 
+docker run --rm -v ~/.m2:/root/.m2 --net runtime_default openaffect/server-specs 
