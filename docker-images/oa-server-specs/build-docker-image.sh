@@ -5,4 +5,4 @@ rm -fr tmp/*
 
 cp -r ../../microservices/oa-server-specs/* ./tmp/
 
-docker build -no-cache -t openaffect/server-specs .
+docker build -t openaffect/server-specs .
