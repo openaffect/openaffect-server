@@ -1,4 +1,5 @@
-FROM jenkins:2.46.1-alpine
+FROM jenkins/jenkins:2.93-alpine
+#FROM jenkins:2.46.1-alpine
 
 
 #
@@ -16,7 +17,7 @@ USER root
 # Install docker and docker-compose. Note that on alpine, we may be behind latest releases... See bottom of
 # this file to build an image with the latest version on a another linux distribution.
 #
-RUN apk update && apk add docker make py-pip shadow && pip install docker-compose
+RUN apk update && apk add docker make py-pip shadow maven && pip install docker-compose
 RUN usermod -aG users jenkins
 
 #
