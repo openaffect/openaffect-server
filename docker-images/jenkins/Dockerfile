@@ -1,5 +1,5 @@
-FROM jenkins/jenkins:2.93-alpine
-#FROM jenkins:2.46.1-alpine
+FROM jenkins/jenkins:2.107.2-alpine
+#FROM jenkins/jenkins:2.93-alpine
 
 
 #
@@ -31,15 +31,3 @@ ADD config/jenkins_home /var/jenkins_home/
 #
 RUN /usr/local/bin/install-plugins.sh nodejs workflow-aggregator pipeline-stage-view blueocean
 
-
-#FROM jenkins:2.32.3
-#
-# Install Docker
-#
-#USER root
-#RUN curl -fsSL https://get.docker.com/ | sh
-#RUN usermod -aG docker jenkins
-#RUN curl -L https://github.com/docker/compose/releases/download/1.11.2/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
-#RUN chmod +x /usr/local/bin/docker-compose
-#RUN usermod -aG users jenkins
-#USER jenkins
