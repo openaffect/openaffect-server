@@ -17,7 +17,7 @@ public class SwaggerDocumentationConfig {
     ApiInfo apiInfo() {
         return new ApiInfoBuilder()
             .title("Open Affect API")
-            .description("API to record emotions.")
+            .description("API to record emotions!!")
             .license("MIT")
             .licenseUrl("http://opensource.org/licenses/MIT")
             .termsOfServiceUrl("http://openaffect.io")
