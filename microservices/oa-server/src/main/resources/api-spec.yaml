@@ -85,9 +85,6 @@ definitions:
             type: object
   emotion:
     type: object
-    required:
-      - category
-      - intensity
     properties:
       intensity:
         type: number
