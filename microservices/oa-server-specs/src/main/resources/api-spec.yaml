@@ -37,7 +37,6 @@ paths:
     get:
       description: list reported measures
       operationId: listMeasures
-      consumes:
       produces:
         - application/json
       responses:
@@ -47,6 +46,12 @@ paths:
             type: array
             items:
               $ref: '#/definitions/measure'
+      parameters:
+        - name: triggerHref
+          in: query
+          type: string
+          description: the trigger href field to look for
+          required: false
 definitions:
   measure:
     type: object
@@ -85,9 +90,6 @@ definitions:
             type: object
   emotion:
     type: object
-    required:
-      - category
-      - intensity
     properties:
       intensity:
         type: number
