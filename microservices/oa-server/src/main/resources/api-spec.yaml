@@ -52,6 +52,18 @@ paths:
           type: string
           description: the trigger href field to look for
           required: false
+    delete:
+      description: delete measures related to one trigger
+      operationId: deleteMeasuresByTrigger
+      parameters:
+        - name: triggerHref
+          in: query
+          type: string
+          description: the trigger's href of the measures to delete
+          required: true
+      responses:
+        '204':
+          description: deleted
 definitions:
   measure:
     type: object

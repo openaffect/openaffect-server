@@ -12,4 +12,7 @@ import java.util.List;
 public interface MeasureRepository extends MongoRepository<Measure, String> {
     @Query("{trigger.href: ?0}")
     List<Measure> listByTriggerHref(String href);
+
+    @Query(value = "{trigger.href: ?0}", delete = true)
+    void deleteByTriggerHref(String href);
 }
