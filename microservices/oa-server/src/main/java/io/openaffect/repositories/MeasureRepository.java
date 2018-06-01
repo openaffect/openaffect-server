@@ -10,7 +10,8 @@ import java.util.List;
  * Created by Olivier Liechti on 05/03/17.
  */
 public interface MeasureRepository extends MongoRepository<Measure, String> {
-    @Query("{trigger.href: ?0}")
+    // Find by trigger href, if the href contains the given string.
+    @Query("{trigger.href: {$regex: '.*?0.*'}}")
     List<Measure> listByTriggerHref(String href);
 
     @Query(value = "{trigger.href: ?0}", delete = true)
