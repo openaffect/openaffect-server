@@ -52,6 +52,18 @@ paths:
           type: string
           description: the trigger href field to look for
           required: false
+        - name: fromDate
+          in: query
+          type: string
+          format: date-time
+          description: the inclusive date from which the measures are collected (only works if the triggerHref parameter was given)
+          required: false
+        - name: toDate
+          in: query
+          type: string
+          format: date-time
+          description: the inclusive date to which the measures are collected (only works if the triggerHref parameter was given)
+          required: false
     delete:
       description: delete measures related to one trigger
       operationId: deleteMeasuresByTrigger
@@ -108,3 +120,7 @@ definitions:
         format: double
       category:
         type: string
+      properties:
+          type: object
+          additionalProperties:
+            type: object
