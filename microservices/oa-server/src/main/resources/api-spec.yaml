@@ -64,6 +64,27 @@ paths:
           format: date-time
           description: the inclusive date to which the measures are collected (only works if the triggerHref parameter was given)
           required: false
+    put:
+      description: edit a measure by the given trigger's href.
+      operationId: editMeasure
+      consumes:
+        - application/json
+      parameters:
+        - name: triggerHref
+          in: query
+          type: string
+          description: the trigger's href of the measure
+          required: true
+        - name: editedMeasure
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/measure'
+      responses:
+        '200':
+          description: edited
+          schema:
+            type: object
     delete:
       description: delete measures related to one trigger
       operationId: deleteMeasuresByTrigger
