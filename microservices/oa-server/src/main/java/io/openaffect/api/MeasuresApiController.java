@@ -83,10 +83,17 @@ public class MeasuresApiController implements MeasuresApi {
 
     @Override
     public ResponseEntity<List<Measure>> listMeasures( @ApiParam(value = "the trigger href field to look for") @RequestParam(value = "triggerHref", required = false) String triggerHref,
-                                                       @ApiParam(value = "the inclusive date from which the measures are collected") @RequestParam(value = "fromDate", required = false) @DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss.SSSZ") DateTime fromDate,
-                                                       @ApiParam(value = "the inclusive date to which the measures are collected") @RequestParam(value = "toDate", required = false) @DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss.SSSZ") DateTime toDate) {
-        if (triggerHref == null) {
+                                                    @ApiParam(value = "a string that the trigger href field must contain") @RequestParam(value = "triggerHrefLike", required = false) String triggerHrefLike,
+                                                    @ApiParam(value = "the inclusive yyyy-MM-dd'T'HH:mm:ss.SSSZ date from which the measures are collected (only works if one of the triggerHref parameters was given), for example 2018-07-02T10:18:32.123Z") @RequestParam(value = "fromDate", required = false) @DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss.SSSZ") DateTime fromDate,
+                                                    @ApiParam(value = "the inclusive yyyy-MM-dd'T'HH:mm:ss.SSSZ date to which the measures are collected (only works if one of the triggerHref parameter was given), for example 2018-07-03T00:00:00.000Z") @RequestParam(value = "toDate", required = false) @DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss.SSSZ") DateTime toDate) {
+        if (triggerHref == null && triggerHrefLike == null) {
             return new ResponseEntity<List<Measure>>(measureRepository.findAll().stream().map(measureEntity -> toMeasure(measureEntity)).collect(Collectors.toList()), HttpStatus.OK);
+        } else if (triggerHrefLike != null) {
+            if (fromDate == null || toDate == null) {
+                return new ResponseEntity<List<Measure>>(measureRepository.findIfTriggerHrefContains(triggerHrefLike).stream().map(measureEntity -> toMeasure(measureEntity)).collect(Collectors.toList()), HttpStatus.OK);
+            } else {
+                return new ResponseEntity<List<Measure>>(measureRepository.findIfTriggerHrefContainsAndIsBetweenDates(triggerHrefLike, fromDate, toDate).stream().map(measureEntity -> toMeasure(measureEntity)).collect(Collectors.toList()), HttpStatus.OK);
+            }
         } else {
             if (fromDate == null || toDate == null) {
                 return new ResponseEntity<List<Measure>>(measureRepository.findByTriggerHref(triggerHref).stream().map(measureEntity -> toMeasure(measureEntity)).collect(Collectors.toList()), HttpStatus.OK);

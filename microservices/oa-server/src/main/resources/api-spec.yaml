@@ -52,17 +52,22 @@ paths:
           type: string
           description: the trigger href field to look for
           required: false
+        - name: triggerHrefLike
+          in: query
+          type: string
+          description: a string that the trigger href field must contain
+          required: false
         - name: fromDate
           in: query
           type: string
           format: date-time
-          description: the inclusive date from which the measures are collected (only works if the triggerHref parameter was given)
+          description: the inclusive yyyy-MM-dd'T'HH:mm:ss.SSSZ date from which the measures are collected (only works if one of the triggerHref parameters was given), for example 2018-07-02T10:18:32.123Z
           required: false
         - name: toDate
           in: query
           type: string
           format: date-time
-          description: the inclusive date to which the measures are collected (only works if the triggerHref parameter was given)
+          description: the inclusive yyyy-MM-dd'T'HH:mm:ss.SSSZ date to which the measures are collected (only works if one of the triggerHref parameter was given), for example 2018-07-03T00:00:00.000Z
           required: false
     put:
       description: edit a measure by the given trigger's href.
