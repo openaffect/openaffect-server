@@ -1,6 +1,4 @@
-FROM jenkins/jenkins:2.107.2-alpine
-#FROM jenkins/jenkins:2.93-alpine
-
+FROM jenkins/jenkins:2.198-alpine
 
 #
 # Running jenkins as root (instead as jenkins) is not recommended for a regular CD server. However,
@@ -17,8 +15,27 @@ USER root
 # Install docker and docker-compose. Note that on alpine, we may be behind latest releases... See bottom of
 # this file to build an image with the latest version on a another linux distribution.
 #
-RUN apk update && apk add docker make py-pip shadow maven && pip install docker-compose
-RUN usermod -aG users jenkins
+RUN apk add --update \
+	docker \
+	py-pip \
+  python-dev \
+  gcc \
+  libc-dev \
+  make \
+	procps \
+	maven \
+	nodejs \
+	npm \
+  openjdk7 \
+  py-cffi \
+  libffi-dev \
+  openssl-dev \
+  libgcc && \
+  pip install --upgrade pip && \
+  pip install docker-compose	
+
+
+RUN /usr/local/bin/install-plugins.sh git matrix-auth workflow-aggregator docker-workflow credentials-binding blueocean
 
 #
 # Add initial jenkins configuration. This is how jenkins knows about our job. If we were accessing a private
@@ -26,8 +43,4 @@ RUN usermod -aG users jenkins
 #
 ADD config/jenkins_home /var/jenkins_home/
 
-#
-# Install plugins that we want to use
-#
-RUN /usr/local/bin/install-plugins.sh nodejs workflow-aggregator pipeline-stage-view blueocean
 

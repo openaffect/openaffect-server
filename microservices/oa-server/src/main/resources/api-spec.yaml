@@ -63,12 +63,12 @@ definitions:
       emotion:
         $ref: '#/definitions/emotion'
       subject:
-        $ref: '#/definitions/resource'
+        $ref: '#/definitions/tresource'
       trigger:
-        $ref: '#/definitions/resource'
+        $ref: '#/definitions/tresource'
       sensor:
-        $ref: '#/definitions/resource'
-  resource:
+        $ref: '#/definitions/tresource'
+  tresource:
       type: object
       required:
         - href

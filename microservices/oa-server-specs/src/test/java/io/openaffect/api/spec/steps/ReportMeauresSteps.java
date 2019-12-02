@@ -52,6 +52,7 @@ public class ReportMeauresSteps {
 
         Resource trigger = new Resource();
         trigger.setType("project");
+        trigger.setHref("agent");
         trigger.getProperties().put("name", "Open Affect Server");
 
         Emotion emotion = new Emotion();
