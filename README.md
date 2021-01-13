@@ -3,6 +3,7 @@
 This repository contains a server-side implementation of the Open Affect API, built on top of the Spring Boot framework.
 
 [![Build Status](https://travis-ci.org/openaffect/openaffect-server.svg?branch=master)](https://travis-ci.org/openaffect/openaffect-server)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fopenaffect%2Fopenaffect-server.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fopenaffect%2Fopenaffect-server?ref=badge_shield)
 
 ## What is Open Affect API?
 
@@ -71,3 +72,5 @@ Yes, since release 0.1.1. We use [Cucumber-JVM](https://cucumber.io/docs/referen
 ## Licences
 
 The icon for the GitHub organization is 'masks' by Creative Stall from the Noun Project
+
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fopenaffect%2Fopenaffect-server.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fopenaffect%2Fopenaffect-server?ref=badge_large)
