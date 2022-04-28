@@ -4,7 +4,8 @@ metadata:
   name: openaffect-server
   annotations:
     github.com/project-slug: openaffect/openaffect-server
-    backstage.io/techdocs-ref: valuespec:
+    backstage.io/techdocs-ref: 
+    valuespec:
   type: other
   lifecycle: unknown
   owner: developers
