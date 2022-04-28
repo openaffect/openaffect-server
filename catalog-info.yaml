@@ -1,0 +1,10 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: openaffect-server
+  annotations:
+    github.com/project-slug: openaffect/openaffect-server
+spec:
+  type: other
+  lifecycle: unknown
+  owner: developers
