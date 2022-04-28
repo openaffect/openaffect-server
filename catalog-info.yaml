@@ -4,7 +4,7 @@ metadata:
   name: openaffect-server
   annotations:
     github.com/project-slug: openaffect/openaffect-server
-    backstage.io/techdocs-ref: value
+    backstage.io/techdocs-ref: url:https://backstage.avalia.io/oa-doc
 spec:
   type: other
   lifecycle: unknown
