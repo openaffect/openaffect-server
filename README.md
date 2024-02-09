@@ -59,6 +59,7 @@ An example is provided in the form of a PostMan collection, available in `exampl
 
 Yes, since release 0.1.1. We use [Cucumber-JVM](https://cucumber.io/docs/reference/jvm) to specify the expected behaviour of the REST API implementation. We have a separate maven project for that, in the `./microservices/oa-server-specs` directory. The build process of that project also uses the Swagger API specification to generate client stubs. The features are described in Gherkin feature files in the `./microservices/oa-server-specs/src/test/resources/scenarios` directory.
 
+
 ### How do I run the executable specification?
 
 1. Start the docker topology, as explained before.
